@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shopping_app/ProductPage.dart';
@@ -26,90 +27,79 @@ class _HomePageState extends State<HomePage> {
   List<Product> products = [
     Product(
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         image: "assets/product1.jpg",
         price: "100",
-        productName: "iPad mini"
-        ),
-        Product(
+        productName: "iPad mini"),
+    Product(
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         image: "assets/product2.jpg",
         price: "100",
-        productName: "iPad pro"
-        ),
-        Product(
+        productName: "iPad pro"),
+    Product(
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         image: "assets/product3.jpg",
         price: "100",
-        productName: "iPhone Pro Max"
-        ),
-        Product(
+        productName: "iPhone Pro Max"),
+    Product(
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         image: "assets/product4.jpg",
         price: "100",
-        productName: "Apple Watch Series 3"
-        ),
-        Product(
+        productName: "Apple Watch Series 3"),
+    Product(
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         image: "assets/product5.jpg",
         price: "100",
-        productName: "Apple Watch Series 4"
-        ),
-        Product(
+        productName: "Apple Watch Series 4"),
+    Product(
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         image: "assets/product6.jpg",
         price: "100",
-        productName: "Macbook pro 16 inch"
-        ),
-        Product(
+        productName: "Macbook pro 16 inch"),
+    Product(
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         image: "assets/product7.jpg",
         price: "100",
-        productName: "Macbook pro"
-        ),
-        Product(
+        productName: "Macbook pro"),
+    Product(
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         image: "assets/product8.jpg",
         price: "100",
-        productName: "iMac 4k Ratina"
-        ),
-        Product(
+        productName: "iMac 4k Ratina"),
+    Product(
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         image: "assets/product9.jpg",
         price: "100",
-        productName: "T-Shirts"
-        ),
-        Product(
+        productName: "T-Shirts"),
+    Product(
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         image: "assets/product10.jpg",
         price: "100",
-        productName: "Ethnic Wear - Dress"
-        ),
-        Product(
+        productName: "Ethnic Wear - Dress"),
+    Product(
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         image: "assets/product11.jpg",
         price: "100",
-        productName: "Dress"
-        ),
-        Product(
+        productName: "Dress"),
+    Product(
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         image: "assets/product12.jpg",
         price: "100",
-        productName: "T-shirt"
-        ),
-        
+        productName: "T-shirt"),
   ];
+
+  GlobalKey<ScaffoldState> drawerKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -122,6 +112,7 @@ class _HomePageState extends State<HomePage> {
     ));
 
     return Scaffold(
+      key: drawerKey,
       appBar: AppBar(
         centerTitle: true,
         title: Text(
@@ -134,7 +125,9 @@ class _HomePageState extends State<HomePage> {
         actionsIconTheme: IconThemeData(color: Colors.black),
         iconTheme: IconThemeData(color: Colors.black),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            drawerKey.currentState.openDrawer();
+          },
           icon: Icon(EvaIcons.menu2Outline),
         ),
         actions: <Widget>[
@@ -143,6 +136,78 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(EvaIcons.shoppingBagOutline),
           ),
         ],
+      ),
+      drawerEdgeDragWidth: 0,
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.amber,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              accountEmail: Text(
+                "Ribinshad@mail.com",
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+              ),
+              accountName: Text("Ribinshad",
+              style: TextStyle(
+                  color: Colors.black,),),
+              currentAccountPicture: ClipRRect(
+                borderRadius: BorderRadius.circular(70),
+                child: Image(
+                  image: NetworkImage(
+                      "https://avatars0.githubusercontent.com/u/61222151?s=400&u=628c2d0e4ee5a72f455f2203d936c96887b07ea1&v=4"),
+                  width: 70,
+                  height: 70,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+
+            SizedBox(height:5),
+            ListTile(
+              title: Text("Home"),
+              leading: Icon(EvaIcons.homeOutline),
+            ),
+            SizedBox(height:5),
+
+            ListTile(
+              title: Text("Account"),
+              leading: Icon(EvaIcons.personOutline),
+            ),
+            SizedBox(height:5),
+
+
+            ListTile(
+              title: Text("Electronics"),
+              leading: Icon(EvaIcons.bulbOutline),
+            ),
+            SizedBox(height:5),
+
+
+            ListTile(
+              title: Text("Fashion"),
+              leading: Icon(EvaIcons.heartOutline),
+            ),
+            SizedBox(height:10),
+
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: AspectRatio(
+                  aspectRatio: 16/5,
+                  child: Image.asset("assets/banner8.jpg",fit: BoxFit.cover,),
+                  ),
+                ),
+            ),
+
+
+          ],
+        ),
       ),
       body: Container(
         child: SingleChildScrollView(
@@ -264,64 +329,68 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
 
-              SizedBox(height:10,),
+              SizedBox(
+                height: 10,
+              ),
 
               GridView.count(
                 physics: ClampingScrollPhysics(),
-                crossAxisCount:2,
-                shrinkWrap:true,
-                childAspectRatio: 1/1.27,
-                children:products.map((product)
-                {
+                crossAxisCount: 2,
+                shrinkWrap: true,
+                childAspectRatio: 1 / 1.27,
+                children: products.map((product) {
                   return Stack(
                     children: <Widget>[
                       Column(
                         children: [
-                          Hero(
-                            tag: product.image,
-                            child: Container(
-                              child:Column(
-                                children:<Widget> [
-                                  AspectRatio(
-                                    aspectRatio: 1/1,
+                          Container(
+                            child: Column(
+                              children: <Widget>[
+                                Hero(
+                                  tag: product.image,
+                                  child: AspectRatio(
+                                    aspectRatio: 1 / 1,
                                     child: Center(
                                       child: Image(
-                                        image:AssetImage(product.image),
-                                        ),
+                                        image: AssetImage(product.image),
+                                      ),
                                     ),
                                   ),
-                                  Text(product.productName, ),
-                                  Text("${product.price}\$",
-                                  style: TextStyle(
-                                    fontSize:18, 
-                                    fontWeight:FontWeight.w700, 
-                                    color:Colors.amber,
-                                    ),
-                                    ),
-                                ],
-                              ),
                                 ),
+                                Text(
+                                  product.productName,
+                                ),
+                                Text(
+                                  "${product.price}\$",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.amber,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
-
-                          Material(
-                            color:Colors.transparent,
-                            child:InkWell(
-                              onTap: (){
-                                Navigator.push(context,
-                                MaterialPageRoute(
-                                  builder:(context)=> ProductPage(product: product,
-                                  ),
+                      Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ProductPage(
+                                  product: product,
                                 ),
-                                 );
-                              },
                               ),
-                          ),
+                            );
+                          },
+                        ),
+                      ),
                     ],
                   );
-                }
-              ).toList(),
+                }).toList(),
               ),
             ],
           ),
